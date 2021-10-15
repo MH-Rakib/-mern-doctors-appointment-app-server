@@ -15,6 +15,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("Listening from The Heroku Server");
+});
+
 client.connect((err) => {
   const appointmentsCollection = client
     .db("doctorsPortal")
